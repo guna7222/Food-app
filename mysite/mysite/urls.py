@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('food/', include('food.urls')),
+    path('', include('food.urls')),
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name = 'register'),
     path('login/', authentication_views.LoginView.as_view(template_name = 'user/login.html'), name = 'login'),
@@ -29,5 +29,5 @@ urlpatterns = [
     path('profile/', user_views.profilepage, name='profilepage'),
 ]
 urlpatterns +=[
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
