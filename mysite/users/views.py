@@ -14,7 +14,7 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'user/register.html', {'form':form})
-@login_required
+@login_required()
 def profilepage(request):
     return render(request, 'user/profile.html')
 
